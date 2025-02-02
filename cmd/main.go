@@ -69,7 +69,8 @@ func init() {
 func main() {
 	var clusterResourceNamespace string
 	var printVersion bool
-	flag.StringVar(&clusterResourceNamespace, "cluster-resource-namespace", "", "The namespace for secrets in which cluster-scoped resources are found.")
+	flag.StringVar(&clusterResourceNamespace, "cluster-resource-namespace", "",
+		"The namespace for secrets in which cluster-scoped resources are found.")
 	flag.BoolVar(&printVersion, "version", false, "Print version to stdout and exit")
 
 	var metricsAddr string
