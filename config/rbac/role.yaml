@@ -4,12 +4,16 @@ kind: ClusterRole
 metadata:
   name: manager-role
 rules:
-- resources:
+- apiGroups:
+  - ""
+  resources:
   - events
   verbs:
   - create
   - patch
-- resources:
+- apiGroups:
+  - ""
+  resources:
   - secrets
   verbs:
   - get
