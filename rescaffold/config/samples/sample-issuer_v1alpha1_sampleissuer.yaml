@@ -1,0 +1,9 @@
+apiVersion: sample-issuer.example.com/v1alpha1
+kind: SampleIssuer
+metadata:
+  labels:
+    app.kubernetes.io/name: sample-external-issuer
+    app.kubernetes.io/managed-by: kustomize
+  name: sampleissuer-sample
+spec:
+  # TODO(user): Add fields here
