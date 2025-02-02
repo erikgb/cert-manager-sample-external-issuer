@@ -35,6 +35,7 @@ rules:
   - certificates.k8s.io
   resourceNames:
   - sampleclusterissuers.sample-issuer.example.com/*
+  - sampleissuers.sample-issuer.example.com/*
   resources:
   - signers
   verbs:
