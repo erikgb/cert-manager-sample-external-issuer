@@ -31,7 +31,7 @@ import (
 // +kubebuilder:printcolumn:name="Generation",type="integer",JSONPath=".metadata.generation"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 
-// SampleIssuer is the Schema for the issuers API
+// SampleIssuer is the Schema for the sampleissuers API.
 type SampleIssuer struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -75,9 +75,9 @@ func (vi *SampleIssuer) GetIssuerTypeIdentifier() string {
 // so that it can interact with our Issuer resource.
 var _ v1alpha1.Issuer = &SampleIssuer{}
 
-//+kubebuilder:object:root=true
+// +kubebuilder:object:root=true
 
-// SampleIssuerList contains a list of Issuer
+// SampleIssuerList contains a list of SampleIssuer.
 type SampleIssuerList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`

@@ -39,7 +39,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: SampleClusterIssuer is the Schema for the clusterissuers API
+        description: SampleClusterIssuer is the Schema for the sampleclusterissuers
+          API.
         properties:
           apiVersion:
             description: |-

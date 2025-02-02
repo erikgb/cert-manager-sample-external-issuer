@@ -32,7 +32,7 @@ import (
 // +kubebuilder:printcolumn:name="Generation",type="integer",JSONPath=".metadata.generation"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 
-// SampleClusterIssuer is the Schema for the clusterissuers API
+// SampleClusterIssuer is the Schema for the sampleclusterissuers API.
 type SampleClusterIssuer struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -62,9 +62,9 @@ func (vi *SampleClusterIssuer) GetIssuerTypeIdentifier() string {
 // so that it can interact with our Issuer resource.
 var _ v1alpha1.Issuer = &SampleClusterIssuer{}
 
-//+kubebuilder:object:root=true
+// +kubebuilder:object:root=true
 
-// SampleClusterIssuerList contains a list of ClusterIssuer
+// SampleClusterIssuerList contains a list of SampleClusterIssuer.
 type SampleClusterIssuerList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`

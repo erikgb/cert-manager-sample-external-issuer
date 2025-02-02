@@ -39,7 +39,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: SampleIssuer is the Schema for the issuers API
+        description: SampleIssuer is the Schema for the sampleissuers API.
         properties:
           apiVersion:
             description: |-
