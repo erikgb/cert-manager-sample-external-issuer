@@ -16,4 +16,11 @@ resources:
   kind: SampleIssuer
   path: github.com/cert-manager/sample-external-issuer/api/v1alpha1
   version: v1alpha1
+- api:
+    crdVersion: v1
+  domain: example.com
+  group: sample-issuer
+  kind: SampleClusterIssuer
+  path: github.com/cert-manager/sample-external-issuer/api/v1alpha1
+  version: v1alpha1
 version: "3"

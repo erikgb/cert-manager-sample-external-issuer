@@ -3,6 +3,7 @@
 # It should be run by config/default
 resources:
 - bases/sample-issuer.example.com_sampleissuers.yaml
+- bases/sample-issuer.example.com_sampleclusterissuers.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
 
 patches:
