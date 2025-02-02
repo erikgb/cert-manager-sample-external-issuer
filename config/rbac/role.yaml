@@ -23,7 +23,6 @@ rules:
   - cert-manager.io
   resources:
   - certificaterequests
-  - certificatesigningrequests
   verbs:
   - get
   - list
@@ -32,6 +31,19 @@ rules:
   - cert-manager.io
   resources:
   - certificaterequests/status
+  verbs:
+  - patch
+- apiGroups:
+  - certificates.k8s.io
+  resources:
+  - certificatesigningrequests
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - certificates.k8s.io
+  resources:
   - certificatesigningrequests/status
   verbs:
   - patch
