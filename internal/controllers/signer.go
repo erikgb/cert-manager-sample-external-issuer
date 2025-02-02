@@ -64,6 +64,14 @@ type Issuer struct {
 	client client.Client
 }
 
+// +kubebuilder:rbac:groups=sample-issuer.example.com,resources=sampleclusterissuers;sampleissuers,verbs=get;list;watch
+// +kubebuilder:rbac:groups=sample-issuer.example.com,resources=sampleclusterissuers/status;sampleissuers/status,verbs=patch
+// +kubebuilder:rbac:groups=,resources=events,verbs=create;patch
+// +kubebuilder:rbac:groups=,resources=secrets,verbs=get;list;watch
+// +kubebuilder:rbac:groups=cert-manager.io,resources=certificaterequests;certificatesigningrequests,verbs=get;list;watch
+// +kubebuilder:rbac:groups=cert-manager.io,resources=certificaterequests/status;certificatesigningrequests/status,verbs=patch
+// +kubebuilder:rbac:groups=certificates.k8s.io,resources=signers,verbs=sign,resourceNames=sampleclusterissuers.sample-issuer.example.com/*
+
 func (s Issuer) SetupWithManager(ctx context.Context, mgr ctrl.Manager) error {
 	s.client = mgr.GetClient()
 

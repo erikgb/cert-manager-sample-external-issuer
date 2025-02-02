@@ -1,11 +1,57 @@
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  labels:
-    app.kubernetes.io/name: sample-external-issuer
-    app.kubernetes.io/managed-by: kustomize
   name: manager-role
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "list", "watch"]
+- resources:
+  - events
+  verbs:
+  - create
+  - patch
+- resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cert-manager.io
+  resources:
+  - certificaterequests
+  - certificatesigningrequests
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cert-manager.io
+  resources:
+  - certificaterequests/status
+  - certificatesigningrequests/status
+  verbs:
+  - patch
+- apiGroups:
+  - certificates.k8s.io
+  resourceNames:
+  - sampleclusterissuers.sample-issuer.example.com/*
+  resources:
+  - signers
+  verbs:
+  - sign
+- apiGroups:
+  - sample-issuer.example.com
+  resources:
+  - sampleclusterissuers
+  - sampleissuers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - sample-issuer.example.com
+  resources:
+  - sampleclusterissuers/status
+  - sampleissuers/status
+  verbs:
+  - patch
