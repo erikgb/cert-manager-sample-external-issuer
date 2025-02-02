@@ -33,4 +33,3 @@ resources:
 # default.
 - cert_manager_controller_approver_clusterrole.yaml
 - cert_manager_controller_approver_clusterrolebinding.yaml
-

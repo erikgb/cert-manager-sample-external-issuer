@@ -6,4 +6,5 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: sampleclusterissuer-sample
 spec:
-  # TODO(user): Add fields here
+  authSecretName: "sampleclusterissuer-sample-credentials"
+  url: "http://sample-issuer.example.com/api/v1"
